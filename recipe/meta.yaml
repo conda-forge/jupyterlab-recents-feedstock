@@ -1,13 +1,13 @@
 {% set name = "jupyterlab-recents" %}
-{% set version = "3.0.1" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/NERSC/{{ name|lower }}/archive/v{{ version }}.tar.gz
-  sha256: ab52233ebf90fdc8b11ef9eb69d4a5b7c35e2b99d2a6c2be1b1e07c6fb24dea5
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 3b48727350cf8bdf063c29fd6184761007bca7ec1d0adfae87bb378f7e1ecf54
 
 build:
   noarch: python
@@ -16,18 +16,15 @@ build:
 
 requirements:
   host:
-    - nodejs >=12.0.0
-    - python >=3.6
+    - python >=3.7
     - pip
-    - jupyterlab >=3.0.0
     - jupyter-packaging >=0.7.9,<0.8.0
   run:
-    - python >=3.6
-    - jupyterlab >=3.0.0
+    - python >=3.7
 
 test:
   requires:
-    - nodejs >=12.0.0
+    - jupyterlab >=3.0.0,<4.0.0
   commands:
     - jupyter labextension list 2>&1 | grep -ie "jupyterlab-recents.*OK"
     - python -m jupyterlab.browser_check  # [not linux]
