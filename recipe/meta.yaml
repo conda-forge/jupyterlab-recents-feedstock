@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-recents" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 3b48727350cf8bdf063c29fd6184761007bca7ec1d0adfae87bb378f7e1ecf54
+  sha256: d295fe2506e24fe7a38d8651c265033528df94a9d535b84f88e28e295017dc01
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
