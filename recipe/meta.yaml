@@ -27,11 +27,11 @@ test:
   requires:
     - jupyterlab >=3.0.0,<4.0.0
   commands:
-    - jupyter labextension list 2>&1 | grep -ie "jupyterlab-recents.*OK"
+    - jupyter labextension list 2>&1 | grep -ie "@jlab-enhanced/recents.*OK"
     - python -m jupyterlab.browser_check  # [not linux]
 
 about:
-  home: https://github.com/NERSC/jupyterlab-recents
+  home: https://github.com/jupyterlab-contrib/jupyterlab-recents
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE

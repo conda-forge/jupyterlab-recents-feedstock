@@ -1,7 +1,7 @@
 About jupyterlab-recents
 ========================
 
-Home: https://github.com/NERSC/jupyterlab-recents
+Home: https://github.com/jupyterlab-contrib/jupyterlab-recents
 
 Package license: BSD-3-Clause
 
