@@ -1,11 +1,11 @@
-About jupyterlab-recents
-========================
+About jupyterlab-recents-feedstock
+==================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlab-recents-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/jupyterlab-contrib/jupyterlab-recents
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlab-recents-feedstock/blob/main/LICENSE.txt)
 
 Summary: A JupyterLab extension that tracks recent files and directories.
 
