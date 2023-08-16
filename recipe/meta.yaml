@@ -30,7 +30,7 @@ test:
     - jupyterlab >=4.0.0,<5
   commands:
     - jupyter labextension list 2>&1 | grep -ie "@jlab-enhanced/recents.*OK"
-    - python -m jupyterlab.browser_check --no-browser-test # [not linux]
+    - python -m jupyterlab.browser_check --no-browser-test  # [not linux]
 
 about:
   home: https://github.com/jupyterlab-contrib/jupyterlab-recents
