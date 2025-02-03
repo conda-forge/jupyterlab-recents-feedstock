@@ -6,14 +6,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 31c4dae23d1e4325ddf96f6e7b53634b2531c61edacfa910fd90cfccd9f7a6a4
   patches:
     - pyproject.patch
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -23,13 +23,14 @@ requirements:
     - hatch-nodejs-version
     - jupyterlab >=4.0.0,<5
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   requires:
     - jupyterlab >=4.0.0,<5
+    - python {{ python_min }}
   commands:
     - jupyter labextension list 2>&1 | grep -ie "@jlab-enhanced/recents.*OK"
     - python -m jupyterlab.browser_check --no-browser-test  # [not linux]
